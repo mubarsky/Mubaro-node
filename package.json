@@ -1,0 +1,26 @@
+{
+  "name": "mubaro",
+  "version": "1.0.0",
+  "description": "Official Node.js SDK for Mubaro",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "mubaro",
+    "otp",
+    "authentication",
+    "verification"
+  ],
+  "author": "Ismail Mubarak",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
