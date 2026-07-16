@@ -1,8 +1,13 @@
 export interface SendOtpResponse {
-  success: boolean;
-  message: string;
-  otp_id: string;
+  id: string;
   status: string;
-  recipient: string;
   expires_at: string;
+}
+
+export interface VerifyOtpResponse {
+  id: string;
+  status: string;
+  verified: boolean;
+  code: string;
+  message: string;
 }
