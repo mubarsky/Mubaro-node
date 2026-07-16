@@ -1,7 +1,7 @@
 import type { MubaroConfig } from "../types/config.js";
 import { DEFAULT_BASE_URL } from "../core/constants.js";
 import { HttpClient } from "../core/HttpClient.js";
-import { Otp } from "../modules/otp.js";
+import { Otp } from "../modules/Otp.js";
 
 export class Mubaro {
   public readonly apiKey: string;

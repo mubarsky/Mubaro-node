@@ -1,5 +1,6 @@
 import { HttpClient } from "../core/HttpClient.js";
-import type { SendOtpRequest, SendOtpResponse } from "../types/otp.js";
+import type { SendOtpRequest } from "../requests/otp.js";
+import type {  SendOtpResponse } from "../responses/otp.js";
 
 export class Otp {
   constructor(private readonly http: HttpClient) {}
