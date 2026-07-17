@@ -1,9 +1,9 @@
 import { MubaroError } from "./MubaroError.js";
 
-export class RateLimitError extends MubaroError {
+export class InvalidOtpError extends MubaroError {
   constructor(message: string, code?: string) {
     super(message, code);
 
-    this.name = "RateLimitError";
+    this.name = "InvalidOtpError";
   }
 }

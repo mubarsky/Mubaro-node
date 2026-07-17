@@ -1,5 +1,5 @@
 import type { HttpMethod } from "../types/http.js";
-import {AuthenticationError,MubaroError,NotFoundError,ValidationError,RateLimitError} from "../errors/index.js";
+import {createError} from "../errors/createError.js";
 export class HttpClient {
   constructor(
     private readonly baseUrl: string,
@@ -20,36 +20,18 @@ export class HttpClient {
       body: body ? JSON.stringify(body) : undefined,
     });
 
-    const data = await response.json();
+    const data = await response.json().catch(() => ({}));
 
     if (!response.ok) {
-     this.handleError(
-       response.status,
-       data.message ?? "An unknown error occurred.",
-     );
+       throw createError(
+         response.status,
+         data.code,
+         data.message ?? "Unknown error",
+       );
     }
 
     return data as T;
   }
 
-  private handleError(status: number, message: string): never {
-    switch (status) {
-      case 400:
-      case 422:
-        throw new ValidationError(message);
-
-      case 401:
-      case 403:
-        throw new AuthenticationError(message);
-
-      case 404:
-        throw new NotFoundError(message);
-
-      case 429:
-        throw new RateLimitError(message);
-
-      default:
-        throw new MubaroError(message || "Something went wrong.");
-    }
-  }
+ 
 }

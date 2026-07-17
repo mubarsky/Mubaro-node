@@ -3,3 +3,7 @@ export * from "./AuthenticationError.js";
 export * from "./ValidationError.js";
 export * from "./RateLimitError.js";
 export * from "./NotFoundError.js";
+export * from "./InvalidOtpError.js";
+export * from "./OtpExpiredError.js";
+export * from "./OtpAlreadyUsedError.js";
+export * from "./EmailDeliveryError.js";

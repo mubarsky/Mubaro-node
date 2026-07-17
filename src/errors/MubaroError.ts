@@ -1,7 +1,12 @@
 export class MubaroError extends Error {
-  constructor(message: string) {
+  public readonly code?: string;
+
+  constructor(message: string, code?: string) {
     super(message);
 
     this.name = "MubaroError";
+    this.code = code;
+
+    Object.setPrototypeOf(this, new.target.prototype);
   }
 }

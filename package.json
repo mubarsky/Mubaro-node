@@ -1,26 +1,54 @@
 {
   "name": "mubaro",
   "version": "1.0.0",
-  "description": "Official Node.js SDK for Mubaro",
+  "description": "Official Node.js SDK for sending and verifying OTPs with Mubaro.",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "play":"tsx playground.ts"
+    "example": "tsx playground.ts",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "mubaro",
     "otp",
     "authentication",
-    "verification"
+    "verification",
+    "email",
+    "2fa",
+    "sdk",
+    "node",
+    "typescript",
+    "passwordless"
   ],
   "author": "Ismail Mubarak",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mubarsky/Mubaro-node.git"
+  },
+  "homepage": "https://www.mubaro.app/docs",
+  "bugs": {
+    "url": "https://github.com/mubarsky/Mubaro-node/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "tsx": "^4.23.1",
     "typescript": "^7.0.2"
