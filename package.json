@@ -1,6 +1,6 @@
 {
   "name": "mubaro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official Node.js SDK for sending and verifying OTPs with Mubaro.",
   "type": "module",
   "main": "./dist/index.js",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "example": "tsx playground.ts",
+    "example": "tsx examples/basic.ts",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
