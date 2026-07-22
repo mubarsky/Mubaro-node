@@ -1,5 +1,6 @@
 export interface SendOtpRequest {
   email: string;
+  from?: string;
   subject?: string;
   html?: string;
   text?: string;
